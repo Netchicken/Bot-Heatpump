@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace Bot_Quickstart
+namespace Bot_Heatpump
 {
     public static class WebApiConfig
     {

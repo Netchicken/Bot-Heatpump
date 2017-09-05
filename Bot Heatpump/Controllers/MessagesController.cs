@@ -8,7 +8,7 @@ using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.FormFlow;
 using Microsoft.Bot.Connector;
 
-namespace Bot_Quickstart
+namespace Bot_Heatpump
 {
     [BotAuthentication]
     public class MessagesController : ApiController

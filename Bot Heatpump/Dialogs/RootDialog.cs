@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 
-namespace Bot_Quickstart.Dialogs
+namespace Bot_Heatpump.Dialogs
 {
     [Serializable]
     public class RootDialog : IDialog<object>

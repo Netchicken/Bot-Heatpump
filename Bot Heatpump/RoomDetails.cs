@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using Microsoft.Bot.Builder.FormFlow;
 
-namespace Bot_Quickstart
+namespace Bot_Heatpump
 {
     // The RoomDetails class represents the form that you want to complete using information that is collected from the user. 
     // It must be serializable so the bot can be stateless. 
