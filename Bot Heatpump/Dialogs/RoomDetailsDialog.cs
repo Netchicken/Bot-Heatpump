@@ -30,7 +30,6 @@ namespace Bot_Heatpump.Dialogs
         public List<Output.Wall> WallConstruction;
 
         [Prompt("Do you have Double Glazing? Y/N {||}", ChoiceStyle = ChoiceStyleOptions.Buttons)]
-
         public bool DoubleGlazingInsulation { get; set; }
 
         [Prompt("Do you have Ceiling Insulation? Y/N {||}")]
@@ -64,12 +63,8 @@ namespace Bot_Heatpump.Dialogs
             Output.UnderFloorInsulation = UnderFloorInsulation;
             Output.WallConstruction = WallConstruction.ToString();
 
-            //really cold
-            if (Output.CalcRoomArea() > 10)
-            {
-                return "Get the biggest, you are going to freeze";
-            }
-            return "Get a small one and put on a jersey you wuss";
+            return Output.Calculation();
+
         }
 
 
