@@ -35,8 +35,8 @@ namespace Bot_Heatpump.Dialogs
         [Prompt("Do you have Ceiling Insulation? Y/N {||}")]
         public bool CeilingInsulation { get; set; }
 
-        [Template(TemplateUsage.Bool, "Do you have Wall Insulation?  Y/N {||}", ChoiceStyle = ChoiceStyleOptions.Buttons)]
-        public bool WallInsulation { get; set; }
+        [Template(TemplateUsage.Bool, "Do you have Exterior Wall Insulation?  Y/N {||}", ChoiceStyle = ChoiceStyleOptions.Buttons)]
+        public bool ExteriorWallInsulation { get; set; }
 
         [Template(TemplateUsage.Bool, "Do you have UnderFloor Insulation?  Y/N {||}", ChoiceStyle = ChoiceStyleOptions.Buttons)]
         public bool UnderFloorInsulation { get; set; }
@@ -57,11 +57,12 @@ namespace Bot_Heatpump.Dialogs
 
         public string HeatPumpCalc()
         {
-            Output.HomeLocation = HomeLocation.ToString();
+            Output.HomeLocation = HomeLocation[0].ToString();
             Output.CeilingInsulation = CeilingInsulation;
             Output.DoubleGlazingInsulation = DoubleGlazingInsulation;
             Output.UnderFloorInsulation = UnderFloorInsulation;
-            Output.WallConstruction = WallConstruction.ToString();
+            Output.WallConstruction = WallConstruction[0].ToString();
+            Output.ExteriorWallInsulation = ExteriorWallInsulation;
 
             return Output.Calculation();
 

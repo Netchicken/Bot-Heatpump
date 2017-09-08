@@ -14,7 +14,7 @@ namespace Bot_Quickstart.Business
 
         public static bool CeilingInsulation { get; set; }
 
-        public static bool WallInsulation { get; set; }
+        public static bool ExteriorWallInsulation { get; set; }
 
         public static bool UnderFloorInsulation { get; set; }
 
@@ -54,6 +54,26 @@ namespace Bot_Quickstart.Business
             }
         }
 
+        private static Single CalcCeilingInsulation(bool CeilingInsulation)
+        {
+            return CeilingInsulation ? 0 : 10;
+        }
+        private static Single CalcDoubleGlazing(bool DoubleGlazingInsulation)
+        {
+            return DoubleGlazingInsulation ? 0 : 10;
+        }
+        private static Single CalcExtWallInsulation(bool ExteriorWallInsulation)
+        {
+            return ExteriorWallInsulation ? 0 : 10;
+        }
+
+        private static Single CalcUnderFloorInsulation(bool UnderFloorInsulation)
+        {
+            return UnderFloorInsulation ? 0 : 10;
+        }
+
+
+
         public static Single CalcRoomArea()
         {
             return Length * Width * Height;
@@ -63,6 +83,10 @@ namespace Bot_Quickstart.Business
 
         public static string Calculation()
         {
+            Single TotalOfCalc = CalcDoubleGlazing(DoubleGlazingInsulation) + CalcHomeLocation(HomeLocation) +
+                                 CalcUnderFloorInsulation(UnderFloorInsulation) +
+                                 CalcExtWallInsulation(ExteriorWallInsulation) +
+                                 CalcCeilingInsulation(CeilingInsulation);
 
             if (Output.CalcRoomArea() > 10)
             {
