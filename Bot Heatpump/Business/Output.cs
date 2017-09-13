@@ -6,6 +6,7 @@ using System.Web;
 
 namespace Bot_Quickstart.Business
 {
+    //https://www.designnavigator.co.nz/CRC.php
     public static class Output
     {
         public static string HomeLocation { get; set; }
@@ -41,9 +42,11 @@ namespace Bot_Quickstart.Business
 
         private static int CalcWall(string WallConstruction)
         {
+            //
             switch (WallConstruction)
             {
                 case "Weatherboards":
+                    //Timber-framed wall with brick veneer cladding - R 2.0
                     return 10;
                 case "Brick":
                     return 2;
@@ -64,11 +67,12 @@ namespace Bot_Quickstart.Business
         }
         private static Single CalcExtWallInsulation(bool ExteriorWallInsulation)
         {
+            //About 22 percent of heat from an average uninsulated home is lost through the walls. https://www.building.govt.nz/building-code-compliance/h-energy-efficiency/h1-energy-efficiency/building-code-requirements-for-house-insulation/r-values-for-common-construction-types/
             return ExteriorWallInsulation ? 0 : 10;
         }
 
         private static Single CalcUnderFloorInsulation(bool UnderFloorInsulation)
-        {
+        {//Around 14 percent of heat is typically lost through the floor.
             return UnderFloorInsulation ? 0 : 10;
         }
 
